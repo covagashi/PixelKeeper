@@ -5,15 +5,15 @@ from tqdm import tqdm
 
 def enhance_image(input_path, output_path):
     with Image(filename=input_path) as img:
-        # Aplicar mejoras automáticas
+        
         img.auto_level()
         img.enhance()
         img.unsharp_mask(radius=1.5, sigma=1.0, amount=1.0, threshold=0.0)
         
-        # Ajuste fino de brillo y contraste
+        
         img.brightness_contrast(brightness=5, contrast=10)
         
-        # Guardar la imagen mejorada
+        
         img.save(filename=output_path)
 
 def process_images(input_folder, output_folder, json_file):
